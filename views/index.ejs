@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="nuwZullandApp">
+
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      var nuwZullandApp = angular.module('nuwZullandApp', []);
+
+      nuwZullandApp.filter('nuwzullandize', function(){
+        return function(text) {
+             return text ? text.replace(/[aeiou]/gi, 'u') : '';
+        };
+      });
+  </script>
   </head>
+
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <input type="text" ng-model="boringText" value="" />
+    <h2>{{boringText | nuwzullandize}}</h2>
   </body>
+
 </html>
