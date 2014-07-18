@@ -1,10 +1,16 @@
 {
   "name": "nuwzullund",
-  "description": "Translate any sentence into the New Zealand equivalent",
   "version": "0.0.1",
-  "private": true,
+  "description": "Translate any sentence into the New Zealand equivalent",
+  "scripts": {
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rowanoulton/nuwzullund.git"
+  },
   "dependencies": {
-    "express": "3.x",
+    "express": "~4.2.0",
     "static-favicon": "~1.0.0",
     "morgan": "~1.0.0",
     "cookie-parser": "~1.0.1",
