@@ -18,7 +18,7 @@ var express         = require('express'),
  */
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
+app.set('port', 3000);
 app.use(favicon());
 app.use(logger('dev'));
 app.use(bodyParser.json());
