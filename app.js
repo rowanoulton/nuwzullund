@@ -7,11 +7,13 @@ var express         = require('express'),
     logger          = require('morgan'),
     cookieParser    = require('cookie-parser'),
     bodyParser      = require('body-parser'),
+    http            = require('http'),
 
     routes          = require('./routes/index'),
     users           = require('./routes/users'),
 
-    app             = express();
+    app             = express(),
+    server          = http.createServer(app);
 
 /*
  * Express setup
@@ -59,5 +61,8 @@ app.use(function (err, req, res, next) {
         error: {}
     });
 });
+
+console.log('Listening on ' + app.get('port'));
+server.listen(app.get('port'));
 
 module.exports = app;
